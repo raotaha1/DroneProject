@@ -6,6 +6,7 @@
 #include "IEntity.h"
 #include "IStrategy.h"
 #include "math/vector3.h"
+#include "CollectData.h"
 
 // Represents a drone in a physical system.
 // Drones move using euler integration based on a specified
@@ -127,6 +128,8 @@ class Drone : public IEntity {
   Drone& operator=(const Drone& drone) = delete;
 
  private:
+  std::string name;
+  CollectData* collect; 
   JsonObject details;
   Vector3 position;
   Vector3 direction;
